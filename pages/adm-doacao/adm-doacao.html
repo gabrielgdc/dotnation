@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar color="nation">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Administrador</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <div>
+    <ion-card class="a" *ngFor="let doacao of doacoes | async">
+      <ion-card-header>
+        <h2><strong>Para: {{doacao.alvo_doacao}}</strong></h2>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Foi Pedido:{{doacao.doacao_tipo}}</p>
+        <p>Entrega:{{doacao.entregaStatus}}</p>
+        <p>Data Doação:{{doacao.dataDoacao}}</p>
+        <p>Bairro:{{doacao.bairro}}</p>
+        <p>Rua:{{doacao.rua}}</p>
+        <p><strong>KEY:{{doacao.key}}</strong></p>
+      </ion-card-content>
+      <button ion-button  full color="danger" (click)="excluirDoacao(doacao.key)">Excluir <ion-icon name="md-trash"></ion-icon></button>
+    </ion-card>
+  </div>
+</ion-content>

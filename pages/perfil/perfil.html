@@ -1,0 +1,235 @@
+<ion-header>
+  <ion-navbar color="nation">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Editar Perfil</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="tudo" text-center padding>
+
+
+  <img class="img-perfil" src="{{ myphoto }}">
+  <br>
+  <button ion-button clear color="nation" item-right (click)="pegarFotoGaleria()">Escolher foto</button>
+  <!-- MOTORISTA -->
+
+  <ion-item *ngIf="nomeMotorista">
+    <ion-label color="dark">Nome:</ion-label>
+    <ion-input value="{{nomeMotorista}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="emailMotorista">
+    <ion-label color="dark">Email:</ion-label>
+    <ion-input disabled="true" value="{{emailMotorista}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="senhaMotorista">
+    <ion-label color="dark">Senha:</ion-label>
+    <ion-input [type]="passwordType" type="password" value="{{senhaMotorista}}"></ion-input>
+    <button ion-button clear item-right large (click)="mostrar()">
+      <ion-icon small class="icon-senha" name="eye-off" [name]="passwordIcon" color="nation" item-right></ion-icon>
+    </button>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="cpfMotorista">
+    <ion-label color="dark">CPF:</ion-label>
+    <ion-input disabled="true" value="{{cpfMotorista}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="cidadeMotorista">
+    <ion-label color="dark">Cidade</ion-label>
+    <ion-input disabled="true" value="{{cidadeMotorista}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="bairroMotorista">
+    <ion-label color="dark">Bairro:</ion-label>
+    <ion-input value="{{bairroMotorista}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="ruaMotorista">
+    <ion-label color="dark">Rua:</ion-label>
+    <ion-input value="{{ruaMotorista}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <!-- INSTITUICAO -->
+
+  <ion-item *ngIf="nomeInstituicao">
+    <ion-label color="dark">ONG:</ion-label>
+    <ion-input value="{{nomeInstituicao}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="emailInstituicao">
+    <ion-label color="dark">Email:</ion-label>
+    <ion-input disabled="true" value="{{emailInstituicao}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="senhaInstituicao">
+    <ion-label color="dark">Senha:</ion-label>
+    <ion-input [type]="passwordType" type="password" value="{{senhaInstituicao}}"></ion-input>
+    <button ion-button clear item-right large (click)="mostrar()">
+      <ion-icon small class="icon-senha" name="eye-off" [name]="passwordIcon" color="nation" item-right></ion-icon>
+    </button>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="cnpjInstituicao">
+    <ion-label color="dark">CNPJ:</ion-label>
+    <ion-input disabled="true" value="{{cnpjInstituicao}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+
+  <ion-item class="precisa" *ngIf="cnpjInstituicao">
+    <ion-label color="dark">Preciso de:</ion-label>
+    <ion-select (ionChange)="escolhaprecisa($event)" multiple="true" [(ngModel)]="precisaInstituicao">
+      <ion-option value="Alimentos não perecíveis">Alimentos não perecíveis</ion-option>
+      <ion-option value="Produtos de higiene">Produtos de higiene</ion-option>
+      <ion-option value="Material Escolar">Material Escolar</ion-option>
+      <ion-option value="Cesta Basica">Cesta Basica</ion-option>
+      <ion-option value="Roupas">Roupas</ion-option>
+    </ion-select>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+
+  </ion-item>
+  <ion-item *ngIf="cnpjInstituicao">
+    <ion-textarea disabled="true" value="{{precisaInstituicao}}"></ion-textarea>
+  </ion-item>
+
+  <ion-item *ngIf="cidadeInstituicao">
+    <ion-label color="dark">Cidade</ion-label>
+    <ion-input disabled="true" value="{{cidadeInstituicao}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="bairroInstituicao">
+    <ion-label color="dark">Bairro:</ion-label>
+    <ion-input value="{{bairroInstituicao}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="ruaInstituicao">
+    <ion-label color="dark">Rua:</ion-label>
+    <ion-input value="{{ruaInstituicao}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <!-- PESSOA -->
+  <ion-item *ngIf="nomePessoa">
+    <ion-label color="dark">Nome:</ion-label>
+    <ion-input value="{{nomePessoa}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="emailPessoa">
+    <ion-label color="dark">Email:</ion-label>
+    <ion-input disabled="true" value="{{emailPessoa}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="senhaPessoa">
+    <ion-label color="dark">Senha:</ion-label>
+    <ion-input [type]="passwordType" type="password" value="{{senhaPessoa}}"></ion-input>
+    <button ion-button clear item-right large (click)="mostrar()">
+      <ion-icon small class="icon-senha" name="eye-off" [name]="passwordIcon" color="nation" item-right></ion-icon>
+    </button>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="cpfPessoa">
+    <ion-label color="dark">CPF:</ion-label>
+    <ion-input disabled="true" value="{{cpfPessoa}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="cidadePessoa">
+    <ion-label color="dark">Cidade</ion-label>
+    <ion-input disabled="true" value="{{cidadePessoa}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="bairroPessoa">
+    <ion-label color="dark">Bairro:</ion-label>
+    <ion-input value="{{bairroPessoa}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="ruaPessoa">
+    <ion-label color="dark">Rua:</ion-label>
+    <ion-input value="{{ruaPessoa}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <!-- EMPRESA -->
+
+  <ion-item *ngIf="razaoEmpresa">
+    <ion-label color="dark">Razao Social:</ion-label>
+    <ion-input value="{{razaoEmpresa}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="emailEmpresa">
+    <ion-label color="dark">Email:</ion-label>
+    <ion-input disabled="true" value="{{emailEmpresa}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="senhaEmpresa">
+    <ion-label color="dark">Senha:</ion-label>
+    <ion-input [type]="passwordType" type="password" value="{{senhaEmpresa}}"></ion-input>
+    <button ion-button clear item-right large (click)="mostrar()">
+      <ion-icon small class="icon-senha" name="eye-off" [name]="passwordIcon" color="nation" item-right></ion-icon>
+    </button>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="cnpjEmpresa">
+    <ion-label color="dark">CNPJ:</ion-label>
+    <ion-input disabled="true" value="{{cnpjEmpresa}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="cidadeEmpresa">
+    <ion-label color="dark">Cidade</ion-label>
+    <ion-input disabled="true" value="{{cidadeEmpresa}}"></ion-input>
+    <ion-icon class="icon-senha" color="nation" item-right name="lock"></ion-icon>
+  </ion-item>
+
+  <ion-item *ngIf="bairroEmpresa">
+    <ion-label color="dark">Bairro:</ion-label>
+    <ion-input value="{{bairroEmpresa}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+  <ion-item *ngIf="ruaEmpresa">
+    <ion-label color="dark">Rua:</ion-label>
+    <ion-input value="{{ruaEmpresa}}"></ion-input>
+    <button ion-button color="nation" clear item-right (click)="editar()">Salvar</button>
+  </ion-item>
+
+
+
+
+
+
+
+
+
+  <footer>Dúvidas entre em contato com nossa equipe:
+    <strong>dotnation.suporte@gmail.com</strong>
+  </footer>
+
+</ion-content>

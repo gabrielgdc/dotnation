@@ -1,0 +1,90 @@
+page-inicio {
+    .fundo{
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url('../assets/imgs/cultura3.png');
+        //background: url(../assets/imgs/cultura3.png) no-repeat center center fixed;
+    
+    }
+    p{
+        font-family: century gothic;
+        color: rgb(196, 50, 50)
+    }
+    h2{
+        font-family: century gothic;
+        color: rgb(196, 50, 50)
+    }
+    .buttoninicio{
+        background-color: white;
+        border-radius: 4%;
+        width: 300px;
+        height: 45px;
+        margin-left: 10%;
+        display: block;
+    }
+    .swiper-pagination-bullet //it will change the color of active slider dot
+    {
+        background-color: rgb(228, 91, 91);  //write your desired color here 
+    }
+    .swiper-pagination-bullet-active //it will change the color of active slider dot
+    {
+        background-color: rgb(196, 50, 50);  //write your desired color here 
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .bg-prata1{
+        background-image: url('../assets/imgs/kids.jpg');
+        background-size: cover; 
+    }
+    .bg-prata2{
+        background-image: url('../assets/imgs/kids3333.jpg');
+        background-size: cover;
+        background-position:35%;
+    }
+    .bg-prata3{
+        background-image: url('../assets/imgs/kidscomeno.jpg');
+        background-size: cover; 
+        background-position:45%;
+        
+    }
+    .bg-prata4{
+        background-image: url('../assets/imgs/kids4.jpg');
+        background-size: cover; 
+    }
+    h1, .branco{
+        color: white;
+    }
+    .skip{
+        position: relative;
+        bottom: 110px;
+        left: 120px;
+        background-color: transparent;
+        color: white;
+    }
+    .skip4{
+        position: relative;
+        bottom: 180px;
+        left: 120px;
+        border: none;
+        background-color: transparent;
+    }
+
+}

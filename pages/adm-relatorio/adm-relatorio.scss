@@ -1,0 +1,44 @@
+page-adm-relatorio {
+    .ios, .md {
+ 
+        page-home {
+     
+            .scroll-content {
+                background-color: map-get($colors, light);
+            }
+     
+            ion-card-header {
+                font-weight: bold;
+            }
+     
+        }
+     
+    }
+    .insti{
+        background-image: url('../assets/imgs/bg-adm-insti.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+
+    .motoristas{
+        background-image: url('../assets/imgs/bg-adm-motorista.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+    .empresa{
+        background-image: url('../assets/imgs/bg-adm-empresa.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+    .doacao{
+        background-image: url('../assets/imgs/bg-adm-doacao.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+    .doadores{
+        background-image: url('../assets/imgs/bg-adm-doador.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+    
+}

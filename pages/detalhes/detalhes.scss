@@ -1,0 +1,28 @@
+page-detalhes {
+    *{
+        color: white;
+    }
+    hr {
+        height: 1px !important;
+        width: auto !important;
+        background: rgba(181, 181, 181, 0.925) !important;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      ion-content{
+        background-image: url('../assets/imgs/bg1-detalhes.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .transparent  {
+          background-color: transparent;
+          color: white;
+      }
+      ion-label{
+          color: white;
+      }
+      .borda{
+          border: white solid 1px;
+      }
+}

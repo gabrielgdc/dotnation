@@ -1,0 +1,42 @@
+page-home {
+    .fundo_div{
+        background-color: rgba(250, 217, 189, 0.871);
+    }
+    p{
+    
+        font-family: century gothic;
+        color: black !important; 
+        
+    }
+
+    ion-header{
+        font-family: century gothic;
+    }
+
+    .tudo{
+        font-family: century gothic;
+    }
+    .descricao{
+        font-size: 0.8em;
+    }
+    .pesquisar{
+       background-color: rgb(196, 50, 50);
+       color: white;
+    }
+    ion-option{
+        width: 300px;
+    }
+
+
+
+
+    .metade{
+        background-color: green;
+    }
+    ion-content{
+        background-image: url('../assets/imgs/bg-home.png');
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-attachment: fixed;
+    }
+}

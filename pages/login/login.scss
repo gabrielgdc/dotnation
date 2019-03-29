@@ -1,0 +1,79 @@
+page-login {
+    *{
+        color: white;
+    }
+
+    .tudo{
+        font-family: gothic;
+    }
+
+    ion-header{
+        font-family: century gothic;
+    }
+
+    // .e{
+    //     font-family: century gothic;
+    //     font-size: 28vw;
+    //     font-weight: bold;
+    //     color:rgb(255, 100, 53);
+        
+    // }
+
+    .alerta div{
+        color: red;
+        font-size: 13px;
+    }
+
+    //deixa isso grrrr 
+    .scroll-content {
+        align-content: center;
+        display: block;
+        // flex-direction: column;
+        // justify-content: center;
+        text-align: center;
+    }
+
+    .bg{
+        background-image: url('../assets/imgs/bg4.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .e{
+        text-align: center;
+        color: white;
+    }
+
+    ion-card.card{
+        box-shadow: none;
+        background: rgba(235, 54, 54, 0.4);
+        border-radius: 5px;
+    }
+
+    a, p,
+    ion-card-header.card-header{
+        color: #fff;
+    }
+
+    .list > .item-block:first-child{
+        border: medium none;
+    }
+
+    .item {
+        margin-bottom: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        border: medium none;
+
+        .text-input,{
+            color:#fff;
+        }
+
+        input::-moz-placeholder {
+            color: #fff!important;
+        }
+
+        *::-webkit-input-placeholder{
+            color: #fff!important;
+        }
+    }
+}

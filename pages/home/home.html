@@ -1,0 +1,68 @@
+<!-- TODAS AS PAGINAS APARTIR DO HOME TEM QUE TER ESSE HEADER IDENTICO! -->
+<ion-header>
+  <ion-navbar color="nation">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Bem Vindo!</ion-title>
+    <ion-buttons end>
+      <button class="pesquisar" (click)="ShowSearch()">
+        <ion-icon [name]="pesquisaIcon"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="tudo">
+  <div *ngIf="mostrarPesquisa">
+    <ion-searchbar [(ngModel)]="queryText" (ionCancel)="list()" placeholder="Pesquisar por nome" color="nation" (ionInput)="filterData()">
+    </ion-searchbar>
+  </div>
+  <div *ngIf="mostrarSelect">
+    <ion-item>
+      <ion-select interface="popover" (ionChange)="FiltroSelect($event)" placeholder="Cidade" [(ngModel)]="cidade">
+        <ion-option value="MG">Belo Horizonte</ion-option>
+        <ion-option value="RJ">Rio de Janeiro</ion-option>
+        <ion-option value="SP">São Paulo</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  
+  <div>
+    <ion-card *ngFor="let instituicao of instituicoes | async">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/ong-icon.png">
+        </ion-avatar>
+        <h2>{{instituicao.ong}}</h2>
+        <p class="descricao">{{instituicao.finalidade}}</p>
+      </ion-item>
+      <ion-card-content>
+        <p>
+          <strong>Email: </strong>{{instituicao.email}}</p>
+        <p>
+          <strong>Cidade: </strong>{{instituicao.cidade}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear center color="secondary" (click)="detalhesPage(instituicao)">
+            <ion-icon name="md-add"></ion-icon>
+            <div>Mais detalhes</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+  </div>
+
+  <div *ngIf="naoExiste">
+    <h3>{{naoExiste}}</h3>
+  </div>
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="nation">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <br>
+    <ion-title>Doar</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 text-center>FINALIZANDO</h1>
+  <h3>DADOS DA ONG:</h3>
+  <p>NOME:{{ong}}</p>
+  <p>RUA:{{rua}}</p>
+  <p>BAIRRO:{{bairro}}</p>
+
+  <hr>
+
+  <h2>O QUE VOCÊ IRÁ DOAR:</h2>
+  <p>{{donation}}</p>
+
+  <hr>
+
+  <h2>COMO GOSTARIA QUE A DOAÇÃO CHEGASSE A ONG: </h2>
+
+  <ion-list radio-group [(ngModel)]="entrega">
+      <ion-item>
+        <ion-label>Preciso de um motorista</ion-label>
+        <ion-radio value="motorista"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Eu entregarei</ion-label>
+        <ion-radio value="entregarei"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+
+
+  <button ion-button class="butao" full color="nation" (click)="finalizarDoacao()">Ajudar
+    <img src="assets/imgs/nation_icon.png" width="25px" height="20px">
+  </button>
+
+
+</ion-content>

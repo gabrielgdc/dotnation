@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-navbar color="nation">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Motorista</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="motorista">
+    <p>Informe seus dados:</p>
+    <ion-item>
+      <ion-label stacked>CPF</ion-label>
+      <ion-input type="tel" formControlName="cpf" minlength="14" [brmasker]="{mask:'999.999.999-99', len:14, type:'num'}"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!motorista.controls.cpf.valid && (motorista.controls.cpf.dirty || motorista.controls.cpf.touched)" class="alerta">
+      <div [hidden]="!motorista.controls.cpf.errors.required">
+        O campo é obrigatório
+      </div>
+      <div [hidden]="!motorista.controls.cpf.errors.minlength">
+        O CPF precisa ter 14 digitos!
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nome:</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!motorista.controls.nome.valid && (motorista.controls.nome.dirty || motorista.controls.nome.touched)" class="alerta">
+      <div [hidden]="!motorista.controls.nome.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>CEP:</ion-label>
+        <ion-input type="tel" [(ngModel)]="cep" formControlName="cep" minlength="9" [brmasker]="{mask:'00000-00', len:9, type:'num'}"></ion-input>
+        <!-- [(ngModel)]="cep"-->
+        <!-- <button clear item-right (click)="getEndereco()">Verificar</button> -->
+      </ion-item>
+      <ion-item *ngIf="!motorista.controls.cep.valid && (motorista.controls.cep.dirty || motorista.controls.cep.touched)" class="alerta">
+        <div [hidden]="!motorista.controls.cep.errors.required">
+          O campo é obrigatório
+        </div>
+        <div [hidden]="!motorista.controls.cep.errors.minlength">
+          O CEP precisa ter 9 digitos!
+        </div>
+      </ion-item>
+
+      <ion-item hidden>
+          <ion-label stacked>bairro:</ion-label>
+          <ion-input type="text" formControlName="bairro" value="{{endereco.bairro}}"></ion-input>
+        </ion-item>
+        <ion-item hidden>
+          <ion-label stacked>cidade:</ion-label>
+          <ion-input type="text" formControlName="cidade" value="{{endereco.uf}}"></ion-input>
+        </ion-item>
+        <ion-item hidden>
+          <ion-label stacked>rua:</ion-label>
+          <ion-input type="text" formControlName="rua" value="{{endereco.logradouro}}"></ion-input>
+        </ion-item>
+    <ion-item>
+      <ion-label stacked>Placa do Carro:</ion-label>
+      <ion-input type="text" formControlName="placa" minlength="8" [brmasker]="{mask:'aaaa-000', len:8}"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!motorista.controls.placa.valid && (motorista.controls.placa.dirty || motorista.controls.placa.touched)"
+      class="alerta">
+      <div [hidden]="!motorista.controls.placa.errors.required">
+        O campo é obrigatório
+      </div>
+      <div [hidden]="!motorista.controls.placa.errors.minlength">
+          Coloque uma placa valida!
+        </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email:</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!motorista.controls.email.valid && (motorista.controls.email.dirty || motorista.controls.email.touched)"
+      class="alerta">
+      <div [hidden]="!motorista.controls.email.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Senha:</ion-label>
+      <ion-input [type]="passwordType" minlength="6" formControlName="senha" [type]="passwordType" [brmasker]="{type:'all'}"></ion-input>
+      <button ion-button clear item-right large (click)="mostrar()">
+        <ion-icon name="eye-off" [name]="passwordIcon" color="nation" item-right></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item *ngIf="!motorista.controls.senha.valid && (motorista.controls.senha.dirty || motorista.controls.senha.touched)"
+      class="alerta">
+      <div [hidden]="!motorista.controls.senha.errors.required">
+        O campo é obrigatório
+      </div>
+      <div [hidden]="!motorista.controls.senha.errors.minlength">
+        A senha precisa ter no minimo 6 digitos!
+      </div>
+    </ion-item>
+
+    <ion-item text-center *ngIf="
+        motorista.controls.cpf.valid &&
+        motorista.controls.nome.valid &&
+        motorista.controls.cep.valid &&
+        motorista.controls.placa.valid &&
+        motorista.controls.email.valid &&
+        motorista.controls.senha.valid">
+      <div [hidden]="
+      !motorista.controls.cpf.valid &&
+      !motorista.controls.nome.valid &&
+      !motorista.controls.cep.valid &&
+      !motorista.controls.placa.valid &&
+      !motorista.controls.email.valid &&
+      !motorista.controls.senha.valid">
+        <button ion-button outline large color="nation" (click)="getEndereco()">Cadastrar</button>
+      </div>
+    </ion-item>
+
+  </form>
+</ion-content>

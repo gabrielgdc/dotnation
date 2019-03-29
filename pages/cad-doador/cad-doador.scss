@@ -1,0 +1,74 @@
+page-cad-doador {
+    ion-content{
+       //background-image: url('../assets/imgs/doador.jpg');
+       background-repeat: no-repeat;
+       background-size: cover;
+    }
+    .tudo{
+        font-family: century gothic;
+    }
+    
+    p{
+        font-size: 120%
+    }
+    ion-searchbar{
+        margin-left: 15px;
+    }
+    .searchbar{ 
+        background-color: transparent;
+        border-bottom: 1px solid #DEDEDE;
+        border-width: 10%;
+    }
+    .searchbar-search-icon { 
+        display:none;
+
+    }
+    .searchbar-input {
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+    .labelNice{
+        color: rgb(146, 146, 146);
+        position: relative;
+        right: -15px;
+        top: 20px;
+    }
+
+    ion-header{
+        font-family: century gothic;
+    }
+    .verificar{
+        height: 20px;
+        background: transparent;
+        color: rgb(196, 50, 50);
+        border-left: solid 2px rgb(196, 50, 50);
+    }
+
+
+    .bg{
+        background-color:rgba(255, 81, 0, 0.123)
+    }
+
+    .alerta div{
+        color: red;
+        font-size: 13px;
+    }
+
+    .segment-button {
+        color: black !important;
+        text-transform: none !important;
+        font-size: 1.6rem !important;
+        font-weight: 600 !important;
+        opacity: 1 !important;
+        border: 0 !important;
+    
+        &.activated, &.segment-activated {
+          border-top: 0;
+          border-right: 0;
+          border-bottom: 2px solid rgb(196, 50, 50) !important;
+          border-left: 0;
+          color: rgb(196, 50, 50) !important;
+          background: transparent !important;
+        }
+    }
+}

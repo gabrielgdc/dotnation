@@ -1,0 +1,39 @@
+<!--
+  Generated template for the AdmEmpresaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="nation">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Administrador</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card class="a" *ngFor="let empresa of empresas | async">
+      <ion-card-header>
+        <h2><strong>Nome:{{empresa.razaosocial}}</strong></h2>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Email:{{empresa.email}}</p>
+        <p>Senha:{{empresa.senha}}</p>
+        <p>CNPJ:{{empresa.cnpj}}</p>
+        <p>CEP:{{empresa.cep}}</p>
+        <p>Cidade:{{empresa.cidade}}</p>
+        <p>Bairro:{{empresa.bairro}}</p>
+        <p>Rua:{{empresa.rua}}</p>
+        <p><strong>KEY:{{empresa.key}}</strong></p>
+      </ion-card-content>
+      <button ion-button  full color="danger" (click)="excluirEmpresa(empresa.key)">Excluir <ion-icon name="md-trash"></ion-icon></button>
+      <button ion-button  full color="success" (click)="editarEmpresa(empresa)">Editar <ion-icon name="md-create"></ion-icon></button>
+    </ion-card>
+  </div>
+
+</ion-content>

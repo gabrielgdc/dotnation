@@ -1,0 +1,27 @@
+page-doar {
+    *{
+        color: #fff;
+    }   
+    h3{ 
+        color: white;
+    }
+    .motorista{
+        border: red solid 2px;
+        border-radius: 5px;
+    }
+    .butao{
+        color: white;
+    }
+    ion-content{
+        background-image: url('../assets/imgs/kids2.jpg');
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-attachment: fixed;
+    }
+    ion-label{
+        color: black
+    }
+    ion-checkbox{
+        background-color: green;
+    }
+}

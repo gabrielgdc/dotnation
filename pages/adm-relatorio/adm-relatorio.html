@@ -1,0 +1,106 @@
+<!--
+  Generated template for the AdmRelatorioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="nation">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Administrador</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content>
+
+  <ion-segment color="nation">
+    <ion-segment-button value="crud" (click)="botao('crud')">
+      CRUD
+    </ion-segment-button>
+    <ion-segment-button value="graficos" (click)="botao('graficos')">
+      Graficos
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="exibirCrud">
+    <ion-item class="insti">
+      <h2>Instituiçoes</h2>
+      Quantidade: {{dadosInstituicoes}}
+      <br>
+      <br>
+      <button ion-button round color="nation" small (click)="instituicaotabela()">CRUD</button>
+    </ion-item>
+
+    <ion-item class="empresa">
+      <h2>Empresas</h2>
+      Quantidade: {{dadosEmpresa}}
+      <br>
+      <br>
+      <button ion-button round color="nation" small (click)="empresatabela()">CRUD</button>
+    </ion-item>
+
+    <ion-item class="doadores">
+      <h2>Doadores</h2>
+      Quantidade: {{dadosDoador}}
+      <br>
+      <br>
+      <button ion-button round color="nation" small (click)="doadortabela()">CRUD</button>
+    </ion-item>
+
+    <ion-item class="motoristas">
+      <h2>Motoristas</h2>
+      Quantidade: {{dadosMotorista}}
+      <br>
+      <br>
+      <button ion-button left round color="nation" small (click)="motoristatabela()">CRUD</button>
+    </ion-item>
+
+    <ion-item class="doacao">
+      <h2>Doaçoes</h2>
+      Quantidade: {{dadosDoacao}}
+      <br>
+      <br>
+      <button ion-button round color="nation" small (click)="doacaotabela()">CRUD</button>
+    </ion-item>
+  </div>
+
+  <div *ngIf="exibirGrafico">
+
+    <canvas baseChart width="250" height="280" 
+    [options]="barChartOptions"
+    [colors]="chartColors"
+    [data]="doughnutChartData"
+    [labels]="doughnutChartLabels"
+    [chartType]="doughnutChartType">
+  </canvas>
+      <hr>
+      <canvas baseChart width="250" height="280" 
+      [options]="barChartOptions1"
+      [colors]="chartColors1"
+      [data]="pieChartData" 
+      [labels]="pieChartLabels"
+      [chartType]="pieChartType">
+    </canvas>
+    <button ion-button round full color="nation" small (click)="gerarGrafico()">Atualizar graficos</button>
+  </div>
+
+
+
+
+</ion-content>
+
+
+
+<!-- <p>pro grafico funcionar digita no console:</p>
+  <p>npm install chart.js --save</p>
+  <p>npm install ng2-charts --save</p>
+  <p>npm install brmasker-ionic-3 --save</p>
+  npm install chart.js ng2-charts brmasker-ionic-3 firebase angularfire2 rxjs@^6.0 rxjs-compat --save
+  ionic cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera -->

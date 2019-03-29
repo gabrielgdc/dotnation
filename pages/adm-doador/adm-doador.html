@@ -1,0 +1,41 @@
+<!--
+  Generated template for the AdmDoadorPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="nation">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Administrador</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <div>
+    <ion-card class="a" *ngFor="let doador of doadores | async">
+      <ion-card-header>
+        <h2><strong>Nome: {{doador.nomePessoa}}</strong></h2>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Email:{{doador.email}}</p>
+        <p>Senha:{{doador.senha}}</p>
+        <p>CPF:{{doador.cpf}}</p>
+        <p>Data Nascimento:{{doador.data_nascimento}}</p>
+        <p>CEP:{{doador.cep}}</p>
+        <p>Cidade:{{doador.cidade}}</p>
+        <p>Bairro:{{doador.bairro}}</p>
+        <p>Rua:{{doador.rua}}</p>
+        <p><strong>KEY:{{doador.key}}</strong></p>
+      </ion-card-content>
+      <button ion-button  full color="danger" (click)="excluirDoador(doador.key)">Excluir <ion-icon name="md-trash"></ion-icon></button>
+      <button ion-button  full color="success" (click)="editarDoador(doador)">Editar <ion-icon name="md-create"></ion-icon></button>
+    </ion-card>
+  </div>
+</ion-content>

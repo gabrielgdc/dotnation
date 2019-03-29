@@ -1,0 +1,1 @@
+ npm install chart.js ng2-charts brmasker-ionic-3 firebase angularfire2 rxjs@^6.0 rxjs-compat @ionic-native/camera --save

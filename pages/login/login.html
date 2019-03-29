@@ -1,0 +1,61 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+  <ion-navbar color="nation">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+   pode trocar pro nome que quizer aki, o resto deixa igual
+  </ion-navbar>
+
+</ion-header> -->
+
+<ion-content padding class="bg">
+  <div>
+    <!-- <img src="../assets/imgs/icone2.png"> -->
+    <h1 class="e">.NATION</h1>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      Entrar com sua conta
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="loginForm">
+        <ion-list>
+
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="email" formControlName="email" required></ion-input>
+          </ion-item>
+          <div class="alerta" *ngIf="!loginForm.controls.email.valid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">
+            O Campo é obrigatório
+          </div>
+
+          <ion-item>
+            <ion-label>Senha</ion-label>
+            <ion-input type="password" formControlName="senha" required></ion-input>
+          </ion-item>
+          <div class="alerta" *ngIf="!loginForm.controls.senha.valid && (loginForm.controls.senha.dirty || loginForm.controls.senha.touched)">
+            O Campo é obrigatório
+          </div>
+
+          <button ion-button block color="dark" (click)="signin()">Logar</button>
+          <button ion-button block clear color="light" (click)="presentPrompt()">Esqueceu sua senha?</button>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <!-- <div text-center>
+  <button ion-button clear full color="light" (click)='gotoCadastro()'>Não tem uma conta? Cadastre-se</button>
+  <hr>
+  <p>OU SE PREFERIR</p>
+  <button ion-button icon-left clear (click)='loginFacebook()'>
+    <ion-icon name="logo-facebook"></ion-icon><strong>Entrar com facebook</strong>
+  </button>
+</div> -->
+</ion-content>

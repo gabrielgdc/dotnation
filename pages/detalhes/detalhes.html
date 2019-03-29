@@ -1,0 +1,54 @@
+<!--
+  Generated template for the DetalhesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="nation">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <br>
+    <ion-title>Detalhes</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h1>{{ong}}</h1>
+  <h6>{{finalidade}}</h6>
+  <hr>
+  <h3>Contato:</h3>
+  <p>Email: {{email}}</p>
+  <hr>
+  <h3>Localizaçao:</h3>
+  <p>Cidade: {{cidade}}</p>
+  <p>Bairro: {{bairro}}</p>
+  <p>rua: {{rua}}</p>
+  <p>CEP: {{cep}}</p>
+  <hr>
+  <ion-item class="transparent">
+    <h3>oi</h3>
+    <ion-label class="transparent">O que você gostaria de doar: </ion-label>
+    <ion-select interface="alert" multiple="true">
+      <ion-option value="{{donation}}" *ngFor="let donation of donation_type">{{donation}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+
+  <div text-center>
+
+    <button class="borda" ion-button disabled large icon-end color="dark">
+      Comprar
+    </button>
+    <button class="borda" ion-button large icon-end (click)="gotoDoar()" color="dark">
+      Doar
+    </button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,26 @@
+page-perfil {
+    .tudo{
+        font-family: century gothic;
+    }
+    strong{
+        color: rgb(196, 50, 50);
+    }
+    p{
+        color: black;
+    }
+    img{
+        height: 150px;
+        width: 150px;
+        border-radius: 40%;
+    }
+    .icon-senha{
+        font-size: 20px;
+        width: 10px;
+    }
+    ion-label{
+        font-size: 13px;
+    }
+    ion-input{
+        font-size: 12px;
+    }
+}

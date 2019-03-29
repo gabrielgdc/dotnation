@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-navbar color="nation">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+    <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content text-center class="tudo">
+  <!-- remover na versao final-->
+  <form [formGroup]="instituicao">
+    <p>Informe os dados: 33014556000196</p>
+    <ion-item>
+      <ion-label stacked>CNPJ:</ion-label>
+      <ion-input type="tel" [(ngModel)]="cnpj" formControlName="cnpj" minlength="18" [brmasker]="{mask:'99.999.999/9999-99', len:18, type:'num'}"></ion-input>
+      <button class="verificar" ion-button clear item-right (click)="getCNPJ()">Verificar</button>
+    </ion-item>
+    <ion-item *ngIf="!instituicao.controls.cnpj.valid && (instituicao.controls.cnpj.dirty || instituicao.controls.cnpj.touched)"
+      class="alerta">
+      <div [hidden]="!instituicao.controls.cnpj.errors.required">
+        O campo é obrigatório
+      </div>
+      <div [hidden]="!instituicao.controls.cnpj.errors.minlength && !instituicao.controls.cnpj.errors.maxlength">
+        O CNPJ precisa ter 18 digitos!
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>ONG:</ion-label>
+      <ion-input type="text" formControlName="ong" value="{{cnpjList.nome}}"></ion-input>
+      <!-- <button clear item-right (click)="getCNPJ()">Verificar</button> -->
+    </ion-item>
+    <ion-item *ngIf="!instituicao.controls.ong.valid && (instituicao.controls.ong.dirty || instituicao.controls.ong.touched)"
+      class="alerta">
+      <div [hidden]="!instituicao.controls.ong.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="labelbonita">Finalidade:</ion-label>
+      <ion-select interface="alert" multiple="true" formControlName="finalidade">
+        <ion-option value="{{finalidade}}" *ngFor="let finalidade of finalidades">{{finalidade}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item *ngIf="!instituicao.controls.finalidade.valid && (instituicao.controls.finalidade.dirty || instituicao.controls.finalidade.touched)"
+      class="alerta">
+      <div [hidden]="!instituicao.controls.finalidade.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>CEP:</ion-label>
+      <ion-input type="tel" [(ngModel)]="cep" formControlName="cep" minlength="9" [brmasker]="{mask:'00000-00', len:9, type:'num'}"></ion-input>
+      <!-- [(ngModel)]="cep"-->
+      <!-- <button clear item-right (click)="getEndereco()">Verificar</button> -->
+    </ion-item>
+    <ion-item *ngIf="!instituicao.controls.cep.valid && (instituicao.controls.cep.dirty || instituicao.controls.cep.touched)"
+      class="alerta">
+      <div [hidden]="!instituicao.controls.cep.errors.required">
+        O campo é obrigatório
+      </div>
+      <div [hidden]="!instituicao.controls.cep.errors.minlength">
+        O CEP precisa ter 9 digitos!
+      </div>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label stacked>bairro:</ion-label>
+      <ion-input type="text" formControlName="bairro" value="{{endereco.bairro}}"></ion-input>
+    </ion-item>
+    <ion-item hidden>
+      <ion-label stacked>cidade:</ion-label>
+      <ion-input type="text" formControlName="cidade" value="{{endereco.uf}}"></ion-input>
+    </ion-item>
+    <ion-item hidden>
+      <ion-label stacked>rua:</ion-label>
+      <ion-input type="text" formControlName="rua" value="{{endereco.logradouro}}"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label stacked>Email:</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!instituicao.controls.email.valid && (instituicao.controls.email.dirty || instituicao.controls.email.touched)"
+      class="alerta">
+      <div [hidden]="!instituicao.controls.email.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Senha:</ion-label>
+      <ion-input type="passwordType" minlength="6" name="senha" formControlName="senha" [type]="passwordType" [brmasker]="{type:'all'}"></ion-input>
+      <button ion-button clear item-right large (click)="mostrar()">
+        <ion-icon name="eye-off" [name]="passwordIcon" color="nation" item-right></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item *ngIf="!instituicao.controls.senha.valid && (instituicao.controls.senha.dirty || instituicao.controls.senha.touched)"
+      class="alerta">
+      <div [hidden]="!instituicao.controls.senha.errors.required">
+        O campo é obrigatório
+      </div>
+      <div [hidden]="!instituicao.controls.senha.errors.minlength">
+        A senha precisa ter no minimo 6 digitos!
+      </div>
+    </ion-item>
+
+
+
+    <ion-item text-center *ngIf="
+    instituicao.controls.cnpj.valid &&
+    instituicao.controls.ong.valid &&
+    instituicao.controls.finalidade.valid &&
+    instituicao.controls.cep.valid &&
+    instituicao.controls.email.valid &&
+    instituicao.controls.senha.valid">
+      <div [hidden]="
+      !instituicao.controls.cnpj.valid &&
+      !instituicao.controls.ong.valid &&
+      !instituicao.controls.finalidade.valid &&
+      !instituicao.controls.cep.valid &&
+      !instituicao.controls.email.valid &&
+      !instituicao.controls.senha.valid">
+        <button ion-button outline large color="danger" (click)="getEndereco()">Cadastrar</button>
+      </div>
+    </ion-item>
+
+  </form>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-content text-center>
+  <ion-slides pager="true">
+
+    <ion-slide class="bg-prata1">
+
+      <button item-top class="skip" ion-button clear (click)="skipButton()">Pular</button>
+      <button item-top class="skip" ion-button clear (click)="gotoHome()">ir para a home</button> <!-- priga do carai, tira na versao final-->
+
+      <img src="assets/imgs/icone-doacao.png" alt="">
+      <h1>Bem Vindo ao .Nation</h1>
+    </ion-slide>
+    <ion-slide class="bg-prata2">
+      <img src="assets/imgs/gift.png" alt="">
+      <h1>Um aplicativo que te auxilia a ajudar outras pessoas e instituições carentes :)</h1>
+    </ion-slide>
+    <ion-slide class="bg-prata3">
+      <h1>AQUI VOCÊ PODE DOAR TODO TIPO DE COISA</h1>
+      <p class="branco">Brinquedos, comida, roupa, até mesmo o seu tempo para ajudar os necessitados</p>
+    </ion-slide>
+    <ion-slide class="bg-prata4">
+      <h1>VOCÊ ESTÁ QUASE PRONTO</h1>
+      <p class="branco">Entre e ajude</p>
+      <button ion-button clear color="nation" (click)="entrar()">
+        <strong>ENTRAR</strong>
+      </button>
+      <button ion-button clear color="nation" (click)="cadastrar()">
+        <strong>CADASTRAR</strong>
+      </button>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- <ion-slides pager="true"  (ionSlideDidChange)="showButton()">
+    <ion-slide color="nation" *ngFor="let slide of slider">
+        <ion-buttons end top>
+        <button item-top ion-button clear color="nation" (click)="skipButton()">Pular</button>
+        </ion-buttons>
+      <img [src]="slide.image" />
+      <h2 [innerHTML]="slide.titulo"></h2>
+      <p [innerHTML]="slide.descricao"></p>
+
+      <div class="buttoninicio" *ngIf="exibirBotao">
+        <button ion-button clear color="primary" (click)="entrar()">
+          <strong>ENTRAR</strong>
+        </button>
+        <button ion-button clear color="primary" (click)="cadastrar()">
+          <strong>CADASTRAR</strong>
+        </button>
+      </div>
+    </ion-slide>
+
+  </ion-slides> -->
+
+
+
+</ion-content>

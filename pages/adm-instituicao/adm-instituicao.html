@@ -1,0 +1,41 @@
+<!--
+  Generated template for the AdmInstituicaoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="nation">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{title}}</ion-title>
+      <!--pode trocar pro nome que quizer aki, o resto deixa igual-->
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content >
+
+    <div>
+      <ion-card class="a" *ngFor="let instituicao of instituicoes | async">
+        <ion-card-header>
+          <h2><strong>ONG:{{instituicao.ong}}</strong></h2>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Email:{{instituicao.email}}</p>
+          <p>Senha:{{instituicao.senha}}</p>
+          <p>CNPJ:{{instituicao.cnpj}}</p>
+          <p>Finalidade:{{instituicao.finalidade}}</p>
+          <p>CEP:{{instituicao.cep}}</p>
+          <p>Cidade:{{instituicao.cidade}}</p>
+          <p>Bairro:{{instituicao.bairro}}</p>
+          <p>Rua:{{instituicao.rua}}</p>
+          <p><strong>KEY:{{instituicao.key}}</strong></p>
+        </ion-card-content>
+        <button ion-button  full color="danger" (click)="excluirInstituicao(instituicao.key)">Excluir <ion-icon name="md-trash"></ion-icon></button>
+        <button ion-button  full color="success" (click)="editarInstituicao(instituicao)">Editar <ion-icon name="md-create"></ion-icon></button>
+      </ion-card>
+    </div>
+</ion-content>
