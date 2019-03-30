@@ -9,7 +9,7 @@ Esse projeto foi feito para um PIT do meu colégio, com um grupo de 5 pessoas, e
 Nós fizemos este aplicativo utilizando o framework IONIC integrado com o Firebase do Google, alguns WebServices como ViaCep e uns plugins NodeJS como ChartJS, AngularFire2.
 
 ## **ESTRUTURA DA PASTA**
-App - Contém a estrutura de funcionamento do aplicativo e onde o aplicativo será construído na hora do loading
-Assets - Contém as imagens usados no projeto
-Pages - São as pastas das páginas com o html/css/js de cada página
-Providers - São serviços de lógica do aplicativo como buscar dados, fazer alguns cálculos, compartilhar dados, executar operações
+- App - Contém a estrutura de funcionamento do aplicativo e onde o aplicativo será construído na hora do loading
+- Assets - Contém as imagens usados no projeto
+- Pages - São as pastas das páginas com o html/css/js de cada página
+- Providers - São serviços de lógica do aplicativo como buscar dados, fazer alguns cálculos, compartilhar dados, executar operações
