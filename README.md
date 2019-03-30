@@ -2,7 +2,7 @@
 
 ## **SOBRE O APP**
 
-Esse projeto foi feito para um PIT do meu colégio, com um grupo de 5 pessoas, esse projeto nomeado de .NATION abreviação meio esquisita para DONATION, foi uma ideia de implementar um sistema de doação online, onde as ONGs ou Instituições que ajudam uma causa, cadastrassem no nosso aplicativo e colocasse dados sobre o que a instituição ajuda, o que eles precisam no momento para alguém doar, como tempo, dinheiro, brinquedos, roupa, comida, etc, e o aplicativo listaria todas as ong cadastrada baseada no que o usuario ou empresa gostaria de doar, por exemplo se alguma empresa de leite quisesse doar caixas de leite para uma ong que precisasse de leite, ela cadastraria no nosso app, a ong aparecia para a empresa e enviaria a caixa de leite, pensamos em até criar uma área para pessoas que teriam interesse de transportar a doação para a instituição
+Esse projeto foi feito para um PIT do meu colégio, com um grupo de 5 pessoas, esse projeto nomeado de .NATION abreviação meio esquisita para DONATION, foi uma ideia de implementar um sistema de doação online, onde as ONGs ou Instituições que ajudam uma causa, cadastrassem no nosso aplicativo e colocasse dados sobre a causa da instituição, o que eles precisam no momento para alguém doar, como tempo, dinheiro, brinquedos, roupa, comida, etc, e o aplicativo listaria todas as ong cadastrada baseada no que o usuario ou empresa gostaria de doar, por exemplo se alguma empresa de leite quisesse doar caixas de leite para uma ong que precisasse de leite, ela cadastraria no nosso app, a ong aparecia para a empresa e enviaria a caixa de leite, pensamos em até criar uma área para pessoas que teriam interesse de transportar a doação para a instituição
 
 ## **COMO FOI FEITO**
 
