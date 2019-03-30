@@ -49,12 +49,12 @@ import { StoragedataProvider } from '../providers/storagedata/storagedata';
 import { DoacaoProvider } from '../providers/doacao/doacao';
 
 export const firebaseconfig = {
-  apiKey: "AIzaSyBSvRpORf2jlKhHZWQ4qjtk6MCukXIJST8",
-  authDomain: "dotnation-dc232.firebaseapp.com",
-  databaseURL: "https://dotnation-dc232.firebaseio.com",
-  projectId: "dotnation-dc232",
-  storageBucket: "dotnation-dc232.appspot.com",
-  messagingSenderId: "133676203138"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
 };
 
 
